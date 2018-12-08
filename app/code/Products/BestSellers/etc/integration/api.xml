@@ -1,0 +1,7 @@
+<integrations>
+    <integration name="BestSellersIntegration">
+        <resources>
+            <resource name="Magento_Reports::report_products_bestsellers" />
+        </resources>
+    </integration>
+</integrations>
