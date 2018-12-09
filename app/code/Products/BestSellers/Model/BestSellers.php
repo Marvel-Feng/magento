@@ -74,7 +74,7 @@ class BestSellers implements BestSellerInterface
             ? $_GET['sort']
             : self::KEYS[0];
 
-        // Collection should be loaded when called, not during Dependency Injection
+        // Collection should be loaded when route is called, not during Dependency Injection
         // Load the BestSellers Collection with Date Range filter
         $collection = $this->_productCollection
             ->create('Magento\Sales\Model\ResourceModel\Report\Bestsellers\Collection')
