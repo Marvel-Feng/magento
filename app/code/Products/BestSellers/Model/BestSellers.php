@@ -62,17 +62,14 @@ class BestSellers implements BestSellerInterface
      * @param int $pageSize
      * @return mixed $result Returns Best Seller Collection
      */
-    public function get($pageSize = self::DEFAULT_PRODUCT_COUNT)
+    public function get($pageSize = self::DEFAULT_PRODUCT_COUNT): array
     {
-        // fromDate and toDate are required fields in webapi.xml
-        $fromDate = $_GET['fromDate'];
-        $toDate = $_GET['toDate'];
-        $offset = (int) $_GET['offset'];
+        $request = $this->getParameters();
 
-        // Default to qty_ordered
-        $sort = (in_array($_GET['sort'], self::PRODUCT_KEYS))
-            ? $_GET['sort']
-            : self::PRODUCT_KEYS[0];
+        $fromDate = $request['fromDate'];
+        $toDate = $request['toDate'];
+        $offset = $request['offset'];
+        $sort = $request['sort'];
 
         // Collection should be loaded when route is called, not during Dependency Injection
         // Load the BestSellers Collection with Date Range filter
@@ -97,6 +94,22 @@ class BestSellers implements BestSellerInterface
                 'items'  => $pageSize,
                 'offset' => $offset,
             ],
+        ];
+    }
+
+    /**
+     * Return $_GET params for readability
+     * @return array
+     */
+    private function getParameters(): array
+    {
+        $sort = (in_array($_GET['sort'], self::PRODUCT_KEYS)) ? $_GET['sort'] : self::PRODUCT_KEYS[0];
+
+        return [
+            'sort'     => $sort,
+            'offset'   => (int) $_GET['offset'],
+            'toDate'   => $_GET['toDate'],
+            'fromDate' => $_GET['fromDate'],
         ];
     }
 }
