@@ -45,3 +45,12 @@ Self-explanatory -- the resource ref="anonymous" allows for guests or outside re
     </route>
 </routes>
 ```
+
+
+### Examples of Responses:
+
+#### XML
+![alt text](https://garrettvorce.com/wp-content/uploads/2018/12/Screen-Shot-2561-12-09-at-19.04.55-1.png)
+
+#### JSON
+![alt text](https://garrettvorce.com/wp-content/uploads/2018/12/Screen-Shot-2561-12-09-at-18.36.59.png)
