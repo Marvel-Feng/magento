@@ -1,4 +1,4 @@
-# Magento Module & API Integration
+# Magento 2 Module & API Integration
 
 ### Installation and Setup
 Initially I tried to use Docker to develop/deploy Magento2, but it's extremely slow (20s+ requests)
