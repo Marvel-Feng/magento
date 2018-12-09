@@ -11,7 +11,7 @@ class BestSellers implements BestSellerInterface
      * Keys to be sorted by
      * @var array KEYS
      */
-    const KEYS = ['qty_ordered', 'product_price'];
+    const PRODUCT_KEYS = ['qty_ordered', 'product_price'];
 
     /**
      * @var int DEFAULT_PRODUCT_COUNT
@@ -70,9 +70,9 @@ class BestSellers implements BestSellerInterface
         $offset = (int) $_GET['offset'];
 
         // Default to qty_ordered
-        $sort = (in_array($_GET['sort'], self::KEYS))
+        $sort = (in_array($_GET['sort'], self::PRODUCT_KEYS))
             ? $_GET['sort']
-            : self::KEYS[0];
+            : self::PRODUCT_KEYS[0];
 
         // Collection should be loaded when route is called, not during Dependency Injection
         // Load the BestSellers Collection with Date Range filter
