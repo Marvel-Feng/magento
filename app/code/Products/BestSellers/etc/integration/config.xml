@@ -1,7 +1,0 @@
-<integrations>
-    <integration name="BestSellersIntegration">
-        <email></email>
-        <endpoint_url></endpoint_url>
-        <identity_link_url></identity_link_url>
-    </integration>
-</integrations>
